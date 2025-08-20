@@ -1,0 +1,128 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background: #152238; /* New background */
+  color: #fff;
+  padding: 0 1rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero-title .highlight {
+  background: linear-gradient(90deg, #ff8a00, #e52e71); /* Gradient restored */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #cfd8e3;
+}
+
+.hero-text {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: #dbe3f0;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ff8a00, #e52e71); /* Gradient restored */
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.3s;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #ff8a00;
+  color: #ff8a00;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #ff8a00;
+  color: #152238;
+}
+
+
+.hero-subtitle {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tag {
+  color: #aaa; /* softer white */
+}
+
+.tag-alt {
+  color: #f5a623; /* warm orange accent */
+  font-weight: 500;
+}
+
+.tag-accent {
+  color: #4fc3f7; /* subtle light blue (no gradient) */
+  font-weight: 600;
+}
+
+.hero-badges {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.badge {
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px; /* pill shape */
+  background: #222;
+  color: #bbb;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid #444;
+}
+
+.badge-accent {
+  background: #1e3a5f;
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.badge-alt {
+  background: #3a2e1e;
+  border-color: #f59e0b;
+  color: #f59e0b;
+}
+

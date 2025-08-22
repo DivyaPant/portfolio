@@ -1,0 +1,83 @@
+
+.projects {
+     text-align: center;
+  padding: 80px 20px;
+  margin: 0 auto;
+  font-family: "Segoe UI", sans-serif;
+ 
+}
+
+.projects-container {
+ display: grid;
+grid-template-columns: repeat(auto-fill, minmax(calc(50% - 3rem), 1fr));
+align-items: stretch;
+  gap: 2rem;
+  padding: 2rem;
+  margin: 2rem auto;
+}
+
+.project-card {
+ background-color: hsl(var(--card));
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(44, 38, 33, 0.15) 0px 8px 32px -8px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 2px solid var(--border);
+      min-width: 350px;
+      min-height: 200px;
+      position: relative;
+      text-align: justify;
+}
+
+.link-container {
+   display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.link-icon {
+padding: 8px;
+border: 2px solid var(--border);
+border-radius: 10px;
+line-height: 1;
+cursor: pointer;
+background-color: rgb(var(--background))
+}
+
+.link-icon svg {
+  height: 16px;
+  width: 16px;
+  transition: color 0.3s;
+}
+
+.link-icon:hover {
+  color: var(--text-tertiary);
+  border: 2px solid;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(var(--secondary), 0.2) 0px 0px 20px 0px;
+}
+.project-title {
+        font-weight: 600;
+        margin-top: 1rem;
+}
+.project-description {
+  color: var(--text-secondary);
+}
+
+.skills {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.skill-badge {
+       border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    font-weight: 500;
+background-color: hsl(var(--background-secondary) / 0.5);
+line-height: 1;
+}

@@ -1,14 +1,27 @@
-import React from 'react';
-import './App.css'
+import './App.css';
+// import './theme/theme.css';
 import Hero from './components/Hero/Hero';
-import Hero2 from './components/herosample/hero';
+import ThemeToggle from './components/toggle/ThemeToggle';
+import { ThemeProvider } from './theme/ThemeContext';
+import About from './components/About/About';
+import Projects from './components/Projects/Projects';
 
 function App() {
   return (
-    <React.Fragment>
+    <div className="app-container">
+      {/* <ThemeToggle /> */}
       <Hero />
-    </React.Fragment>
+      <About />
+      <Projects />
+    </div>
   );
 }
 
-export default App
+
+export default function AppWithProvider() {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
+}

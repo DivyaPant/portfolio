@@ -1,0 +1,33 @@
+/* Light theme (default) */
+.light-theme {
+  --background-gradient: linear-gradient(90deg, #e3ffe6 0%, #f9f9f9 100%);
+  --primary: rgb(102, 204, 153);
+  --primary-glow: rgb(153, 230, 179);
+  --primary-foreground: rgb(249, 247, 232);
+  --accent: rgb(102, 153, 204);
+  --accent-glow: rgb(153, 204, 255);
+  --accent-foreground: rgb(51, 38, 38);
+  --text-main: #222;
+  --text-secondary: rgb(220, 186, 163);
+  --text-tertiary: #555;
+  --gradient-primary: linear-gradient(135deg, rgb(102, 204, 153), rgb(153, 230, 179));
+  --button-primary: linear-gradient(135deg, rgb(102, 204, 153), rgb(153, 230, 179));
+  --button-hover: linear-gradient(135deg, rgb(153, 230, 179), rgb(249, 247, 232));
+}
+
+/* Dark theme */
+.dark-theme {
+  --background-gradient: linear-gradient(90deg, #152238 0%, #1a2940 100%);
+  --primary: rgb(102, 204, 255);
+  --primary-glow: rgb(51, 153, 255);
+  --primary-foreground: rgb(255, 255, 255);
+  --accent: rgb(255, 255, 255);
+  --accent-glow: rgb(102, 153, 204);
+  --accent-foreground: rgb(220, 186, 163);
+  --text-main: #fff;
+  --text-secondary: #b3c7e6;
+  --text-tertiary: #e3e3e3;
+  --gradient-primary: linear-gradient(135deg, #152238, #1a2940);
+  --button-primary: linear-gradient(135deg, rgb(102, 204, 255), rgb(51, 153, 255));
+  --button-hover: linear-gradient(135deg, rgb(51, 153, 255), rgb(255, 255, 255));
+}

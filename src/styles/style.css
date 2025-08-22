@@ -1,0 +1,63 @@
+/* Common Css */
+
+.main-container {
+  text-align: center;
+  padding: 80px 20px;
+  margin: 0 auto;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Title */
+.section-heading {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.section-highlight {
+ color: var(--text-tertiary);
+}
+
+.section-subheading {
+color: var(--text-secondary);
+  max-width: 70%;
+  margin: 0 auto;
+  line-height: 1.5;
+  word-spacing: 0px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: rgba(var(--primary), 0.9);
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(102, 204, 153, 0.15);
+}
+
+.btn-secondary {
+  border: 1px solid;
+  color: var(--text-tertiary);
+  /* border-radius: 10px; */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  background-color: rgb(var(--background))
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, rgb(220, 186, 163), rgb(238, 213, 196));
+  border: none;
+  padding: 15px 33px;
+  color: var(--text-primary);
+}

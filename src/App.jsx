@@ -5,6 +5,7 @@ import ThemeToggle from './components/toggle/ThemeToggle';
 import { ThemeProvider } from './theme/ThemeContext';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
+import Contact from './components/contact/Contact';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Hero />
       <About />
       <Projects />
+      <Contact />
     </div>
   );
 }

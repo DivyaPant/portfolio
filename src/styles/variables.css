@@ -10,6 +10,7 @@
     --primary-2: #a9d6b8; /* green shade light */
 
     --secondary:220, 186, 163; /* brownish shade */
+    --secondary-glow: 238 213 196; /* light brownish */
     --secondary-1: #dcbaa3;
 
     --accent: 102, 153, 204; /* rgb(102, 153, 204) */
@@ -26,6 +27,7 @@
 
     /* gradients */
   --gradient-primary: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--primary-glow)));
+  --gradient-secondary: linear-gradient(135deg, rgb(var(--secondary)), rgb(var(--secondary-glow)));
   /* --button-hover: linear-gradient(135deg, rgb(var(--primary-glow)), rgb(var(--primary-foreground))); */
   /* --accent-hover: linear-gradient(135deg, rgb(var(--accent)), rgb(var(--accent-glow))); */
   /* --gradient-hero: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent)));

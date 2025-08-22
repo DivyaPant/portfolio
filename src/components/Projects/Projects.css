@@ -19,7 +19,7 @@ align-items: stretch;
 .project-card {
  background-color: hsl(var(--card));
       border-radius: 10px;
-      box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(44, 38, 33, 0.15) 0px 8px 32px -8px;
+      /* box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(44, 38, 33, 0.15) 0px 8px 32px -8px; */
   padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
       border: 2px solid var(--border);

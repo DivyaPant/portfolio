@@ -16,6 +16,9 @@
 .section-highlight {
  color: var(--text-tertiary);
 }
+.section-highlight-secondary {
+  color: rgb(var(--primary));
+}
 
 .section-subheading {
 color: var(--text-secondary);
@@ -34,6 +37,11 @@ color: var(--text-secondary);
   transition: background 0.2s;
   color: #fff;
   cursor: pointer;
+  border: none;
+}
+
+.btn:focus-visible {
+  outline: none;
 }
 
 .btn-primary {
@@ -56,7 +64,7 @@ color: var(--text-secondary);
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(135deg, rgb(220, 186, 163), rgb(238, 213, 196));
+  background: var(--gradient-secondary);
   border: none;
   padding: 15px 33px;
   color: var(--text-primary);

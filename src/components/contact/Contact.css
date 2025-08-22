@@ -1,0 +1,108 @@
+.contact-content {
+    display: flex;
+    gap: 3rem;
+     margin-top: 3rem;
+}
+
+.contact-form-container {
+    flex: 1; 
+    background-color: hsl(var(--card));
+    border: 0.5px solid var(--border);
+    border-radius: 20px;
+}
+.form-wrapper {
+display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 2rem;
+}
+.form-wrapper > h3, .info-header > h3 {
+    margin-top: 0;
+}
+.contact-form {
+ display: grid;
+  grid-template-columns: repeat(2, 1fr); /* two equal columns */
+  grid-template-rows: auto; /* rows adapt */
+  gap: 1.25rem; /* spacing */
+}
+.contact-input, .contact-textarea {
+    border: 0.5px solid var(--border);
+    background-color: rgba(var(--background), .9);
+    padding: 0.75rem;
+    font-family: "Segoe UI", sans-serif;
+    border-radius: 10px;
+    color: var(--text-primary);
+}
+.contact-input:focus-visible, .contact-textarea:focus-visible {
+    outline: none;
+}
+.contact-textarea {
+     resize: vertical;
+}
+.send-btn {
+    margin-top: 1rem;
+}
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.contact-info-container {
+   flex: 1;
+   text-align: left;
+}
+.info-description {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.info-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.info-item {
+    background-color: hsl(var(--background-secondary) / .3);
+    display: flex;
+    padding: 1rem;
+    gap: 1.25rem;
+    border-radius: 10px;
+    align-items: center;
+    border: 0.5px solid var(--border);
+}
+.info-text {
+    display: flex;
+    flex-direction: column;
+}
+.info-key {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+.info-value {
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+.info-icon {
+    background-color: hsl(25 45% 75% / .1);
+    border: 1px solid hsl(25 45% 75% / .2);
+    color: hsl(25 45% 75%);
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.info-footer {
+        margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--gradient-secondary);
+    text-align: center;
+
+}

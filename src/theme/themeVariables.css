@@ -25,43 +25,19 @@
 }
 
 /* Dark theme */
-.dark-theme {
-  --background: 21, 34, 56; /* #152238; */
-    --background-secondary: 232, 231, 227; /* #e8e7e3 */
-    --card: 245, 244, 240; /* #f5f4f0 */
-
-    /* main colors */
-    --primary: 255, 138, 0; /* orange shade: #ff8a00*/
-    --primary-glow: 229, 46, 113; /* pink shade light: #e52e71*/
-
-    --secondary:220, 186, 163; /* brownish shade: #dcbaa3 */
-    --secondary-glow: 238 213 196; /* light brownish: #eed5c4 */
-
-    /* text colors */
-  --text-primary: rgb(44, 38, 33); /* blackish: #2c2621*/
-  --text-secondary: rgb(138, 128, 117); /* grayish black: #8a8075 */
-  --text-tertiary: rgb(var(--secondary)); /* light brownish: #dcbaa3 */
-
-    /* gradients */
-  --gradient-primary: linear-gradient(90deg, rgb(var(--primary)), rgb(var(--primary-glow)));
-  --gradient-secondary: linear-gradient(135deg, rgb(var(--secondary)), rgb(var(--secondary-glow)));
-
-  /* borders */
-  --border: rgb(221 219 212 / 30%); /* #dddbd4  4d */
-}
 
 .dark-theme {
-    --background: 13,13,8;
-    --background-secondary: 35,35,41;
-    --card: 18,18,23;/* #261e3c (subtle elevation) */
+    --background: 13,13,8; /* #0d0d08 (dark background) */
+    --background-secondary: 35,35,41; /* #23232d (dark secondary background) */
+    --card: 18,18,23; /* #121217 (dark card) */
 
-  /* main colors (new palette) */
-    --primary: 124, 59, 237;
-    --primary-glow: 174, 128, 255;    /* #be8cff (lavender glow) */
+  /* main colors */
+    --primary: 124, 59, 237; /* #7c3aed (dark purple) */
+    --primary-glow: 174, 128, 255; /* #ae80ff (light purple) */
 
 
-    --secondary: 51, 204, 255;
-    --secondary-glow: 128, 223, 255;
+    --secondary: 51, 204, 255; /* #33ccff (dark cyan) */
+    --secondary-glow: 128, 223, 255; /* #80dfff (light cyan) */
 
   /* text colors */
   --text-primary: rgb(241, 241, 244); /* whitish: #f1f1f4*/
@@ -73,5 +49,5 @@
   --gradient-secondary: linear-gradient(135deg, rgb(var(--secondary)), rgb(var(--secondary-glow)));
 
   /* borders */
-  --border: rgb(42 42 50 / 30%);  /* subtle soft border */
+  --border: rgb(42 42 50 / 30%);  /* #2a2a32 4d */
 }

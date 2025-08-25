@@ -52,7 +52,6 @@ color: var(--text-secondary);
 .btn-primary:hover {
   background-color: rgba(var(--primary), 0.9);
   transform: scale(1.05);
-  box-shadow: 0 4px 16px rgba(102, 204, 153, 0.15);
 }
 
 .btn-secondary {

@@ -73,14 +73,14 @@
 .skill-card {
   padding: 30px 20px;
   border-radius: 15px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 14px rgba(var(--secondary), 0.1);
       background-color: rgb(var(--card));
       border: 2px solid var(--border);
 }
 .icon-wrapper {
-    background-color: hsl(25 45% 75% / .1);
-    border: 1px solid hsl(25 45% 75% / .2);
-    color: hsl(25 45% 75%);
+    background-color: rgba(var(--secondary), 0.1);
+    border: 1px solid rgba(var(--secondary), 0.2);
+    color: rgb(var(--secondary));
     width: 3rem;
     height: 3rem;
     margin: auto;

@@ -103,3 +103,21 @@
   line-height: 1.5;
   color: var(--text-secondary);
 }
+
+@media screen and (max-width: 768px) {
+  .about-story {
+    flex-direction: column-reverse;
+  }
+  
+}
+
+@media screen and (max-width: 400px) {
+  .image-card-container {
+    width: 16rem;
+    height: 16rem;
+  }
+  .image-card {
+    width: 14rem;
+    height: 14rem;
+  }
+}

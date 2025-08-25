@@ -106,3 +106,34 @@ display: flex;
     text-align: center;
     color: #2c2621;
 }
+
+/* Responsive Design */
+
+@media screen and (max-width: 1024px) {
+  .contact-content {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 400px) {
+    .info-item {
+        gap: 0.75rem;
+    }
+ .info-icon {
+        width: 2rem;
+    height: 2rem;
+ }
+ .info-icon svg {
+    width: 20px;
+    height: 20px;
+ }
+ .info-value {
+    line-break: anywhere;
+ }
+}

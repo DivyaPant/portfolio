@@ -68,3 +68,10 @@ color: var(--text-secondary);
   padding: 15px 33px;
   color: #2c2621;
 }
+
+@media screen and (max-width: 768px) {
+  .section-subheading {
+    max-width: 90%;
+  }
+  
+}

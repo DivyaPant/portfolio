@@ -1,0 +1,23 @@
+.modal-overlay {
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* black with 50% transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* make sure it sits above page content */
+}
+.modal-content {
+    background-color: rgb(var(--card));
+    padding: 1rem;
+    width: 50%;
+}
+.modal-btn-group {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}

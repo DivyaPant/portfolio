@@ -5,7 +5,7 @@ import ThemeToggle from './components/themeButton/ThemeToggle';
 import { ThemeProvider } from './theme/ThemeContext';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
-import Contact from './components/contact/Contact';
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (

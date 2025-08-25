@@ -1,11 +1,42 @@
+import { useState } from 'react';
 import './Projects.css';
 import { ExternalLinkIcon } from '../../assets/customSvg/projects';
 import { GithubIcon } from '../../assets/customSvg/hero';
 import plusIcon from '../../assets/plusIcon.svg';
 import Modal from '../modal/Modal';
 import ProjectModal from './ProjectModal';
+import {modalConstants} from '../../constant';
 
 const Projects = ()=> {
+    const [openModal, setOpenModal] = useState(false);
+    const [modalDetails, setModalDetails] = useState({
+        title: '',
+        description: ''
+    });
+    const [actionType, setActionType] = useState('');
+    const [editDetails, setEditDetails] = useState({});
+
+    const handleModalClose = ()=> {
+        setOpenModal(false);
+    };
+
+    const handleProjectEdits = (action)=>{
+        setOpenModal(true);
+        setModalDetails(modalConstants[action]);
+        setActionType(action);
+        setEditDetails({});
+    };
+
+    const handleSubmit = ()=> {
+        if (actionType === 'add') {
+            // Handle add project logic
+        } else if (actionType === 'update') {
+            // Handle update project logic
+        } else if (actionType === 'remove') {
+            // Handle remove project logic
+        }
+    }
+
     return (
         <section className="main-container">
             <div className='projects-content'>
@@ -15,7 +46,7 @@ const Projects = ()=> {
                 
             {/* Admin */}
                 <div className='add-new-btn'>  
-                    <button className='btn btn-primary admin-btn-add'>
+                    <button className='btn btn-primary admin-btn-add' onClick={()=> handleProjectEdits('add')}>
                          Add New Project
                     <img src={plusIcon} alt="Add New Project" />
                        
@@ -43,8 +74,8 @@ const Projects = ()=> {
             </div>
             {/* Admin */}
             <div className='admin-buttons'>
-                <button className='btn btn-secondary'>Update</button>
-                <button className='btn btn-secondary'>Remove</button>
+                <button className='btn btn-secondary' onClick={()=> handleProjectEdits('update')}>Update</button>
+                <button className='btn btn-secondary' onClick={()=> handleProjectEdits('remove')}>Remove</button>
             </div>
         </div>
     ))
@@ -53,24 +84,18 @@ const Projects = ()=> {
             </div>
             <button className='btn btn-secondary'>View All Projects</button>
 </div>
-{/* <Modal 
-onClose={() => {}} 
-onSubmit={() => {}} 
-primaryButton="Remove" 
+{
+    openModal && <Modal 
+onClose={handleModalClose} 
+onSubmit={handleSubmit} 
+primaryButton={modalDetails.primaryButton || 'Submit'} 
 secondaryButton="Cancel" 
-title="Remove Project"
-description={
-    <p>
-          Are you sure you want to remove this project from your portfolio?  
-          <br />
-          <br/>
-          <strong>Note:</strong> This will not delete the project itself. It only removes its connection here.  
-          <br/>You can always add it back later.
-        </p>
-}
+title={modalDetails.title || ''}
+description={modalDetails.description || ''}
 >
- <ProjectModal />
-</Modal> */}
+ <ProjectModal type={actionType} editDetails={editDetails} setEditDetails={setEditDetails}/>
+</Modal>
+}
         </section>
 
     )

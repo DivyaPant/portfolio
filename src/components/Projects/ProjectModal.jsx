@@ -1,9 +1,17 @@
 import React from 'react'
 
-const ProjectModal = () => {
-   
+const ProjectModal = (props) => {
+   const { type, editDetails, setEditDetails} = props
   return (
-    <>
+    type === 'remove' ? (
+      <>
+          <p>
+            <strong>Note:</strong> This will not delete the project itself. It only removes its connection here.
+          </p>
+          <p>You can always add it back later.</p>
+      </>
+    ) : (
+      <>
       <form className='modal-form'>
         <div className='form-group'>
           <label htmlFor='project-title' className='text-xs'>Project Title</label>
@@ -37,6 +45,8 @@ const ProjectModal = () => {
         </div>
       </form>
     </>
+    )
+    
   )
 }
 

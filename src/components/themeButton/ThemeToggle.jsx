@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../theme/ThemeContext';
 import './ThemeToggle.css';
+import { DarkIcon, LightIcon } from '../../assets/customSvg/theme';
 
 function ThemeToggle() {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -9,18 +10,12 @@ function ThemeToggle() {
 
   return (
     <div className="theme-toggle-container">
-      <label className="theme-switch">
-        <input
-          type="checkbox"
-          checked={theme === 'dark'}
-          onChange={toggleTheme}
-          aria-label="Toggle theme"
-        />
-        <span className="slider">
-          <span className="icon moon">🌙</span>
-          <span className="icon sun">☀️</span>
-        </span>
-      </label>
+      <button className='theme-toggle-button' onClick={toggleTheme} aria-label="Toggle theme">
+        {
+          theme === 'dark' ? <LightIcon /> : <DarkIcon />  
+        }
+
+      </button>
     </div>
   );
 }

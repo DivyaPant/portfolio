@@ -6,7 +6,7 @@
 
 .contact-form-container {
     flex: 1; 
-    background-color: hsl(var(--card));
+    background-color: rgb(var(--card));
     border: 0.5px solid var(--border);
     border-radius: 20px;
 }
@@ -62,7 +62,7 @@ display: flex;
 }
 
 .info-item {
-    background-color: hsl(var(--background-secondary) / .3);
+    background-color: rgba(var(--background-secondary), 0.3);
     display: flex;
     padding: 1rem;
     gap: 1.25rem;
@@ -104,5 +104,5 @@ display: flex;
     border: 1px solid var(--border);
     background: var(--gradient-secondary);
     text-align: center;
-
+    color: #2c2621;
 }

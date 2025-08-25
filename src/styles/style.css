@@ -67,5 +67,5 @@ color: var(--text-secondary);
   background: var(--gradient-secondary);
   border: none;
   padding: 15px 33px;
-  color: var(--text-primary);
+  color: #2c2621;
 }

@@ -1,7 +1,7 @@
 import './App.css';
-// import './theme/theme.css';
+import './theme/themeVariables.css';
 import Hero from './components/Hero/Hero';
-import ThemeToggle from './components/toggle/ThemeToggle';
+import ThemeToggle from './components/themeButton/ThemeToggle';
 import { ThemeProvider } from './theme/ThemeContext';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
@@ -10,7 +10,7 @@ import Contact from './components/contact/Contact';
 function App() {
   return (
     <div className="app-container">
-      {/* <ThemeToggle /> */}
+      <ThemeToggle />
       <Hero />
       <About />
       <Projects />

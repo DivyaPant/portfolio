@@ -1,4 +1,4 @@
-@import './styles/variables.css';
+@import './theme/themeVariables.css';
 
 :root {
   font-family: ui-sans-serif ,system-ui, Avenir, Helvetica, Arial, sans-serif;

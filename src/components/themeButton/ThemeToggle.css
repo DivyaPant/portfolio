@@ -1,0 +1,34 @@
+.theme-toggle-container {
+     position: fixed;
+    right: 0;
+    top: 0;
+    /* margin: 1rem; */
+    z-index: 999999;
+}
+
+.theme-toggle-button {
+border: 1px solid var(--border);
+   border-radius: 9999px;
+   background: rgb(var(--card));
+   padding: 0;
+       height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     height: 60px;
+  width: 60px;
+   cursor: pointer;
+   transition: background 0.3s, transform 0.2s;
+  margin: 2rem;
+}
+
+.theme-toggle-button:hover {
+   background: rgb(var(--secondary));
+   transform: scale(1.1);
+}
+
+.theme-toggle-button svg {
+  width: 24px;
+  height: 24px;
+}

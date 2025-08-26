@@ -55,8 +55,8 @@ export const Contact = () => {
             </div>
             {/* To do : Resume download option */}
             <div className='info-footer'>
-                <text>            <b>Available for freelance work or full-time positions. </b>
-                <br/><em>Let's create something amazing together!</em></text>    
+                <div>            <b>Available for freelance work or full-time positions. </b>
+                <br/><em>Let's create something amazing together!</em></div>    
             </div></div>
         </div>
       </div>

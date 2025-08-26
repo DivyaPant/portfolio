@@ -1,8 +1,29 @@
-import React from 'react'
+import { useState } from "react";
+
 
 const ProjectModal = (props) => {
-   const { type, editDetails, setEditDetails} = props
-  return (
+   const { type, editDetails, setEditDetails} = props;
+   const [skillTags, setSkillTags] = useState([]);
+   const [chipInputVal, setChipInputVal] = useState("");
+
+   const handleAddChip = (e) => {
+    if(e.key === "Backspace" && !chipInputVal){
+      setSkillTags(skillTags.slice(0, -1));
+      return;
+    }
+      if (e.key !== 'Enter') return;
+     const newChip = e.target.value;
+     if (newChip && !skillTags.includes(newChip)) {
+       setSkillTags([...skillTags, newChip]);
+     }
+     setChipInputVal("");
+   };
+
+   const handleDeleteChip = (_, i) => {
+     setSkillTags(skillTags.filter((_, index) => i !== index));
+   };
+
+   return (
     type === 'remove' ? (
       <>
           <p>
@@ -23,9 +44,33 @@ const ProjectModal = (props) => {
         </div>
         <div className='form-group'>
           <label htmlFor='project-skills' className='text-xs'>Tech Stack</label>
-          <textarea rows='1' className='skills-wrapper'
-           id='project-skills' name='project-skills' placeholder='e.g. HTML, CSS, JavaScript' required
-          />
+          <div className="skills-wrapper">
+            <span className="chips-wrapper">
+              {
+              skillTags.map((tag, index)=> {
+                return (
+                  <span className="chip" key={index}>
+                    {tag}
+                    <span onClick={() => handleDeleteChip('', index)}> X </span>
+                  </span>
+                )
+              })
+            }
+             <span className="chip-input">
+              <input
+                onKeyDown={handleAddChip}
+                id='project-skills'
+                name='project-skills'
+                placeholder=''
+                onChange={(e) => setChipInputVal(e.target.value)}
+                required
+                value={chipInputVal}
+              />
+            </span>
+            </span>
+           
+          </div>
+          <span className="small-description">Press Enter after each skill</span>
         </div>
         <div className='form-group'>
           <label htmlFor='github-url' className='text-xs'>GitHub URL</label>

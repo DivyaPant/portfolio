@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Projects.css';
 import { ExternalLinkIcon } from '../../assets/customSvg/projects';
 import { GithubIcon } from '../../assets/customSvg/hero';
@@ -6,6 +6,7 @@ import plusIcon from '../../assets/plusIcon.svg';
 import Modal from '../modal/Modal';
 import ProjectModal from './ProjectModal';
 import {modalConstants} from '../../constant';
+import { getData } from '../../api/RestServices';
 
 const Projects = ()=> {
     const [openModal, setOpenModal] = useState(false);
@@ -16,6 +17,14 @@ const Projects = ()=> {
     const [actionType, setActionType] = useState('');
     const [editDetails, setEditDetails] = useState({});
 
+    useEffect(() => {
+        const fetchProjects = async () => {
+            const resp = await getData();
+            console.log(resp);
+        };
+        fetchProjects();
+    }, []); 
+   
     const handleModalClose = ()=> {
         setOpenModal(false);
     };

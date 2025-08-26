@@ -138,7 +138,7 @@ line-height: 1;
   border: 1px solid var(--border);
   border-radius: 8px;
   transition: all 0.2s ease;
-  background-color: rgba(var(--background-secondary), 1);
+  background-color: rgba(var(--background-secondary), 0.5);
   font-family: "Segoe UI", sans-serif;
   font-size: 1rem;
   color: var(--text-primary);
@@ -161,6 +161,50 @@ textarea {
 
 .radio-group input:focus, .radio-group input:focus-visible {
   outline: none;
+}
+
+.skills-wrapper {
+  padding: 0.65rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    background-color: rgba(var(--background-secondary), 0.5);
+    font-family: "Segoe UI", sans-serif;
+    font-size: 1rem;
+    color: var(--text-primary);
+    display: flex;
+    flex-wrap: wrap;
+}
+.chip-input {
+  /* flex-grow: 1; */
+    text-align: left;
+}
+.chip-input input{
+   border: none;
+  outline: none;
+  padding: 0 2px;
+  width: 100%;
+  background: inherit;
+  max-width: 100px;
+}
+.chip-input input:focus {
+  border: none;
+  outline: none;
+}
+.chip {
+  border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    font-weight: 500;
+    background-color: rgba(var(--card), 1);
+    font-size: 0.875rem;
+    line-height: 1;
+}
+.chips-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 

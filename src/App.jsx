@@ -6,10 +6,12 @@ import { ThemeProvider } from './theme/ThemeContext';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
+import Admin from './components/Admin';
 
 function App() {
   return (
     <div className="app-container">
+      <Admin />
       <ThemeToggle />
       <Hero />
       <About />

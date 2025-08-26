@@ -14,6 +14,7 @@
     background-color: rgb(var(--card));
     padding: 1rem;
     width: 50%;
+    text-align: center;
 }
 .modal-btn-group {
   margin-top: 2rem;

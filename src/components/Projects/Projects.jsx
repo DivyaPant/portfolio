@@ -6,9 +6,13 @@ import plusIcon from '../../assets/plusIcon.svg';
 import Modal from '../modal/Modal';
 import ProjectModal from './ProjectModal';
 import {modalConstants} from '../../constant';
-import { getData } from '../../api/RestServices';
+import { getProjects, postProjects, updateProjects, deleteProjects } from '../../api/RestServices';
+import { useContext } from 'react';
+import {UserContext} from '../../context/UserContext';
+
 
 const Projects = ()=> {
+    const isLoggedIn = useContext(UserContext)
     const [openModal, setOpenModal] = useState(false);
     const [modalDetails, setModalDetails] = useState({
         title: '',
@@ -16,12 +20,19 @@ const Projects = ()=> {
     });
     const [actionType, setActionType] = useState('');
     const [editDetails, setEditDetails] = useState({});
+    const [projects, setProjects] = useState([]);
 
-    useEffect(() => {
-        const fetchProjects = async () => {
-            const resp = await getData();
-            console.log(resp);
+    const fetchProjects = async () => {
+            try {
+                const resp = await getProjects();
+                setProjects(resp);
+            } catch (error) {
+                console.error('Error fetching projects:', error);
+            }
+            
         };
+
+         useEffect(() => {
         fetchProjects();
     }, []); 
    
@@ -29,20 +40,38 @@ const Projects = ()=> {
         setOpenModal(false);
     };
 
-    const handleProjectEdits = (action)=>{
-        setOpenModal(true);
+    const handleProjectEdits = (action, obj={})=>{
         setModalDetails(modalConstants[action]);
         setActionType(action);
-        setEditDetails({});
+        setEditDetails(obj);
+        setOpenModal(true);
     };
 
     const handleSubmit = ()=> {
         if (actionType === 'add') {
             // Handle add project logic
+            postProjects(editDetails).then(()=> {
+                fetchProjects();
+                handleModalClose();
+            }).catch((error)=> {
+                console.error('Error adding project:', error);
+            })
         } else if (actionType === 'update') {
             // Handle update project logic
+            updateProjects(editDetails._id, editDetails).then(()=> {
+                fetchProjects();
+                handleModalClose();
+            }).catch((error)=> {
+                console.error('Error updating project:', error);
+            })
         } else if (actionType === 'remove') {
             // Handle remove project logic
+            deleteProjects(editDetails._id).then(()=> {
+                fetchProjects();
+                handleModalClose();
+            }).catch((error)=> {
+                console.error('Error removing project:', error);
+            })
         }
     }
 
@@ -53,7 +82,8 @@ const Projects = ()=> {
             <p className="section-subheading text-md">
                 A selection of projects that showcase my skills in development, design, and problem-solving.</p>
                 
-            {/* Admin */}
+            {
+                isLoggedIn && 
                 <div className='add-new-btn'>  
                     <button className='btn btn-primary admin-btn-add' onClick={()=> handleProjectEdits('add')}>
                          Add New Project
@@ -61,37 +91,39 @@ const Projects = ()=> {
                        
                     </button>
                 </div>
+            }
+                
             <div className='projects-container'>
 {
-    Array.from({ length: 4 }).map((_, index) => (
+    projects.map((project, index) => (
         <div className='project-card' key={index}>
              <div className='link-container'>
                 <span className='link-icon'><GithubIcon /></span>
                 <span className='link-icon'><ExternalLinkIcon /></span>
             </div>
-            <h3 className='text-md project-title'>Project Title</h3>
+            <h3 className='text-md project-title'>{project.title}</h3>
             <p className='project-description'>
-                Project description goes here.
-                Each project demonstrates my ability to build responsive and interactive 
-                web applications using modern technologies.
+                {project.description}
             </p>
             <div className='skills'>
-                <span className='skill-badge text-xs'>HTML</span>
-                <span className='skill-badge text-xs'>CSS</span>
-                <span className='skill-badge text-xs'>JavaScript</span>
-                <span className='skill-badge text-xs'>React</span>
+                {project.skillTags && project.skillTags.map((skill, index) => (
+                    <span className='skill-badge text-xs' key={index}>{skill}</span>
+                ))}
             </div>
-            {/* Admin */}
+            {isLoggedIn &&
             <div className='admin-buttons'>
-                <button className='btn btn-secondary' onClick={()=> handleProjectEdits('update')}>Update</button>
-                <button className='btn btn-secondary' onClick={()=> handleProjectEdits('remove')}>Remove</button>
-            </div>
+                <button className='btn btn-secondary' onClick={()=> handleProjectEdits('update', project)}>Update</button>
+                <button className='btn btn-secondary' onClick={()=> handleProjectEdits('remove', project)}>Remove</button>
+            </div>}
         </div>
     ))
 }
                 
             </div>
-            <button className='btn btn-secondary'>View All Projects</button>
+             {
+                    projects.length === 0 && <div className='no-projects-available'>No projects found.</div>
+                }
+            {/* <button className='btn btn-secondary'>View All Projects</button> */}
 </div>
 {
     openModal && <Modal 

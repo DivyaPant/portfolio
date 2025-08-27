@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const ProjectModal = (props) => {
    const { type, editDetails, setEditDetails} = props;
-   const [skillTags, setSkillTags] = useState([]);
+   const [skillTags, setSkillTags] = useState(editDetails.skillTags || []);
    const [chipInputVal, setChipInputVal] = useState("");
 
    const handleAddChip = (e) => {
@@ -23,6 +23,15 @@ const ProjectModal = (props) => {
      setSkillTags(skillTags.filter((_, index) => i !== index));
    };
 
+   useEffect(()=>{
+       setEditDetails(prev => ({...prev, skillTags}));
+   },[skillTags])
+
+   const handleChangeInputValue = (e)=>{
+const {name, value} = e.target;
+setEditDetails(prev => ({...prev, [name]: value}))
+   }
+
    return (
     type === 'remove' ? (
       <>
@@ -36,11 +45,14 @@ const ProjectModal = (props) => {
       <form className='modal-form'>
         <div className='form-group'>
           <label htmlFor='project-title' className='text-xs'>Project Title</label>
-          <input type='text' id='project-title' name='project-title' required />
+          <input type='text' id='project-title' name='title' required onChange={handleChangeInputValue} 
+          defaultValue={editDetails?.title}
+          />
         </div>
         <div className='form-group'>
           <label htmlFor='project-description' className='text-xs'>Project Description</label>
-          <textarea rows='5' id='project-description' name='project-description' required></textarea>
+          <textarea rows='5' id='project-description' name='description' required 
+          onChange={handleChangeInputValue} defaultValue={editDetails?.description}></textarea>
         </div>
         <div className='form-group'>
           <label htmlFor='project-skills' className='text-xs'>Tech Stack</label>
@@ -60,7 +72,7 @@ const ProjectModal = (props) => {
               <input
                 onKeyDown={handleAddChip}
                 id='project-skills'
-                name='project-skills'
+                name='skillTags'
                 placeholder=''
                 onChange={(e) => setChipInputVal(e.target.value)}
                 required
@@ -74,18 +86,23 @@ const ProjectModal = (props) => {
         </div>
         <div className='form-group'>
           <label htmlFor='github-url' className='text-xs'>GitHub URL</label>
-          <input type='url' id='github-url' name='github-url' required />
+          <input type='url' id='github-url' name='githubUrl' required
+           onChange={handleChangeInputValue} defaultValue={editDetails?.githubUrl} />
         </div>
         <div className='form-group'>
           <label htmlFor='live-url' className='text-xs'>Live URL</label>
-          <input type='url' id='live-url' name='live-url' required />
+          <input type='url' id='live-url' name='liveUrl' required onChange={handleChangeInputValue} defaultValue={editDetails?.liveUrl} />
         </div>
         <div className='radio-group'>
             <span className='published-label'>Published: </span>
             <span>
-          <input type="radio" id="yes" name="published" value="yes" />
+          <input type="radio" id="yes" name="published" value="yes" onChange={handleChangeInputValue} 
+           defaultChecked={editDetails?.published}
+          />
           <label htmlFor="yes">Yes</label></span><span>
-          <input type="radio" id="no" name="published" value="no"/>
+          <input type="radio" id="no" name="published" value="no" onChange={handleChangeInputValue} 
+           defaultChecked={!editDetails?.published}
+          />
           <label htmlFor="no">No</label></span>
         </div>
       </form>

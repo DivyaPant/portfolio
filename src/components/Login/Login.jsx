@@ -1,11 +1,11 @@
 
-import Modal from "./modal/Modal";
+import Modal from "../modal/Modal";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
-import { UserContext } from "../context/UserContext";
+import { UserContext } from "../../context/UserContext";
 
 
-const Admin = ({login, handleLogout}) => {
+const Login = ({login, handleLogout}) => {
 const isLoggedIn = useContext(UserContext)
 
 const [openModal, setOpenModal] = useState(false);
@@ -56,4 +56,4 @@ description={'Please login to Edit your portfolio'}
   );
 };
 
-export default Admin;
+export default Login;

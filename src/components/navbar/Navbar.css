@@ -1,0 +1,37 @@
+.navbar-container {
+    z-index: 998;
+    position: sticky;
+    top: 2%
+    /* width: -webkit-fill-available; */
+}
+
+.floating-navbar {
+  height: 100%;
+  width: 100%;
+}
+
+ .floating-navbar ul {
+    list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem;
+  margin: 0;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-item {
+ /* padding: 0.5rem; */
+  padding: 8px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+      font-family: monospace;
+    letter-spacing: 2px;
+    
+
+}

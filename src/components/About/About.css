@@ -21,12 +21,26 @@
   color: var(--text-secondary);
   line-height: 1.7;
 }
+.story-text ul {
+      margin: 0px;
+    padding: 0px;
+}
+.story-text li {
+      display: flex;
+    list-style-type: none;
+    padding: 0.5rem 0px;
+    color: var(--text-secondary);
+}
+.story-text li svg {
+  margin-right: 8px;
+  color: rgb(var(--primary));
+}
 
 .story-image {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 2rem;
 }
 .image-card-container {
     height: 20rem;

@@ -6,7 +6,7 @@ export const modalConstants = {
         },
    remove : {
             title: 'Remove Project',
-            description: 'Are you sure you want to remove this project from your portfolio ?',
+            description: '',
             primaryButton: 'Remove Project'
         },
     update : {

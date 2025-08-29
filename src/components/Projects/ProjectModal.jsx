@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 
 const ProjectModal = (props) => {
-   const { type, editDetails, setEditDetails} = props;
+   const { type, editDetails, setEditDetails, titleErrRef} = props;
    const [skillTags, setSkillTags] = useState(editDetails.skillTags || []);
    const [chipInputVal, setChipInputVal] = useState("");
 
@@ -34,18 +34,19 @@ setEditDetails(prev => ({...prev, [name]: value}))
 
    return (
     type === 'remove' ? (
-      <>
+      <div className="remove-content">
+      <p>Are you sure you want to remove <em><b>{editDetails.title}</b></em> from your portfolio ?</p>
           <p>
             <strong>Note:</strong> This will not delete the project itself. It only removes its connection here.
+            You can always add it back later.
           </p>
-          <p>You can always add it back later.</p>
-      </>
+      </div>
     ) : (
       <>
       <form className='modal-form'>
         <div className='form-group'>
           <label htmlFor='project-title' className='text-xs'>Project Title</label>
-          <input type='text' id='project-title' name='title' required onChange={handleChangeInputValue} 
+          <input ref={titleErrRef} type='text' id='project-title' name='title' required onChange={handleChangeInputValue} 
           defaultValue={editDetails?.title}
           />
         </div>
@@ -82,7 +83,7 @@ setEditDetails(prev => ({...prev, [name]: value}))
             </span>
            
           </div>
-          <span className="small-description">Press Enter after each skill</span>
+          <span className="small-description text-sm">Press Enter after each skill</span>
         </div>
         <div className='form-group'>
           <label htmlFor='github-url' className='text-xs'>GitHub URL</label>

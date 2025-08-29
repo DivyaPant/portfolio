@@ -2,8 +2,8 @@ import './Contact.css';
 import { LocationIcon } from '../../assets/customSvg/contact';
 import { MailIcon } from '../../assets/customSvg/hero';
 
-export const Contact = () => {
-
+export const Contact = (props) => {
+const {ref} = props;
     const contactData = [{
         key: 'Email',
         value: 'divyapant369@gmail.com',
@@ -14,7 +14,7 @@ export const Contact = () => {
         icon: <LocationIcon />
     }];
   return (
-    <section className="main-container">
+    <section className="main-container" ref={ref}>
         <div className='contact-container'>
             <h2 className="section-heading text-2xl">
         Let's <span className="section-highlight-secondary">Connect</span>

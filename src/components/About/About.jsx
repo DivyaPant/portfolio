@@ -1,7 +1,9 @@
 import './about.css';
 import {CodeIcon, PerformanceIcon, DesignIcon, GroupIcon} from '../../assets/customSvg/about';
+import Tick from '../../assets/customSvg/tickMark';
 
-const About = () => {
+const About = (props) => {
+  const {ref} = props;
   const skills = [
           {
             icon: <CodeIcon />,
@@ -26,13 +28,13 @@ const About = () => {
         ];
         
   return (
-    <section className="main-container">
+    <section className="main-container" ref={ref}>
       <div className='about-content'>
       <h2 className="section-heading text-2xl">
         About <span className="section-highlight">Me</span>
       </h2>
       <p className="section-subheading text-md">
-        I'm a passionate developer and designer with 5+ years of experience
+        I'm a passionate developer with 5 years of experience
         creating digital products that users love. I believe great design and
         clean code go hand in hand.
       </p>
@@ -40,15 +42,27 @@ const About = () => {
         <div className="story-text">
           <h3 className='text-lg'>My Story</h3>
           <p>
-            Started my journey in computer science but quickly fell in love with
-            the intersection of technology and design. I've had the privilege of
-            working with startups and Fortune 500 companies.
+            My journey in tech began with a simple drive — the joy of creating. 
+            I’ve always loved the idea of turning thoughts and ideas into something real, 
+            something people can interact with on a screen. 
+            I quickly realized that building applications was more than just writing 
+            code — it was about shaping experiences. Over time, 
+            I’ve come to see development as the perfect blend of creativity and logic, 
+            where ideas take shape and challenges turn into opportunities.
           </p>
           <p>
-            When I'm not coding, you'll find me exploring new design trends,
-            contributing to open source, or hiking with my camera in search of
-            the perfect shot.
+            I understand the significance of continuous learning to remain current with the 
+            latest industry trends and technologies. Therefore, I am committed to 
+            expanding my knowledge and skills to stay ahead of the curve and achieve 
+            greater success in my field. With every project, I keep learning, growing, 
+            and building applications that truly make an impact.
           </p>
+            <ul>
+              <li>
+                <Tick />
+                MERN Stack</li>
+              <li><Tick /> Mentor & Code Reviews</li>
+            </ul>
         </div>
 
         <div className="story-image">

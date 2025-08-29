@@ -1,5 +1,5 @@
 
-import Modal from "../modal/Modal";
+import Modal from "../common/modal/Modal";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";

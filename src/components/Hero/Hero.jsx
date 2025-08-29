@@ -1,9 +1,10 @@
 import './Hero.css';
 import {GithubIcon, MailIcon, LinkedinIcon} from '../../assets/customSvg/hero';
 
-function Hero() {
+function Hero(props) {
+  const {ref} = props;
   return (
-    <section className="hero">
+    <section className="hero" ref={ref['home']}>
       <div className="hero-content">
         <div className='text-md hello-text'>Hello, I'm</div>
         <div className='name-text'>Divya Pant</div>
@@ -12,8 +13,8 @@ function Hero() {
             nicely on the web —because building things should be just as enjoyable as using them.
             </p>
         <div className="hero-btn-group text-xs">
-          <a href="#work" className="btn btn-primary">View My Work</a>
-          <a href="#contact" className="btn btn-secondary">Let's Connect</a>
+          <button className="btn btn-primary" onClick={()=> ref.projects.current.scrollIntoView({ behavior: "smooth" })}>View My Work</button>
+          <button className="btn btn-secondary" onClick={()=> ref.contact.current.scrollIntoView({ behavior: "smooth" })}>Let's Connect</button>
         </div>
         <div className='hero-icons'>
             <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className='hero-icon-link'>

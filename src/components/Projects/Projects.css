@@ -107,6 +107,11 @@ line-height: 1;
 
 /* Modal */
 
+.remove-content {
+      max-width: 60%;
+    margin: auto;
+}
+
 .modal-form {
   display: flex;
   flex-direction: column;
@@ -135,7 +140,7 @@ line-height: 1;
 .form-group input,
 .form-group textarea {
   padding: 0.65rem 0.9rem;
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   border-radius: 8px;
   transition: all 0.2s ease;
   background-color: rgba(var(--background-secondary), 0.5);
@@ -146,7 +151,7 @@ line-height: 1;
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border: 1px solid rgb(var(--primary));
+  border: 2px solid rgb(var(--primary));
   outline: none;
 }
 
@@ -207,6 +212,10 @@ textarea {
   gap: 0.5rem;
 }
 
+.small-description {
+  text-align: left;
+  color: var(--text-secondary);
+}
 
 /* Responsive Design */
 

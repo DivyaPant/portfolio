@@ -15,3 +15,9 @@ export const modalConstants = {
             primaryButton: 'Update Project'
         }
 };
+
+export const alertInitialState = {
+    title: '',
+    message: '',
+    type: ''
+}

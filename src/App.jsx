@@ -9,12 +9,15 @@ import Contact from './components/Contact/Contact';
 import Login from './components/Login/Login';
 import Navbar from './components/navbar/Navbar';
 import Skills from './components/Skills/Skills';
-import {UserContext} from './context/UserContext';
+import Alert from './components/common/alert/Alert';
+import {UserContext, AlertContext} from './context/UserContext';
+import {alertInitialState} from './constant';
 import { useEffect, useState, useRef } from 'react';
 import {handleLogin , handleLogout , handleRefreshing} from './firebase/helpers';
 
 function App() {
 const [isLoggedIn, setIsLoggedIn] = useState(false);
+const [alert, setAlert] = useState(alertInitialState);
 const sectionRefs = {
   home: useRef(null),
   about: useRef(null),
@@ -30,6 +33,7 @@ useEffect(()=>{
 
   return (
     <UserContext.Provider value={isLoggedIn}>
+      <AlertContext.Provider value={setAlert}>
     <div className="app-container">
       <Login handleLogout={handleLogout} login={handleLogin}/>
       <Navbar ref={sectionRefs}/>
@@ -39,7 +43,9 @@ useEffect(()=>{
       <Skills ref={sectionRefs.skills}/>
       <Projects ref={sectionRefs.projects}/>
       <Contact ref={sectionRefs.contact}/>
+      <Alert alert={alert} setAlert={setAlert}/>
     </div>
+    </AlertContext.Provider> 
     </UserContext.Provider>
   );
 }

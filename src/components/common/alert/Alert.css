@@ -1,0 +1,62 @@
+.alert-wrapper {
+        position: fixed;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: white;
+    border-radius: 20px;
+    min-width: 25rem;
+    max-width: 40rem;
+}
+
+.alert-content p, .alert-content h4 {
+margin: 0;
+padding: 0;
+}
+
+.alert-content {
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+}
+
+.alert-text {
+    flex:1;
+}
+
+.error-alert {
+        background-color: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: rgb(239, 68, 68);
+}
+
+.success-alert {
+        background-color: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    color: rgb(16, 185, 129);
+}
+
+.info-alert {
+        background-color: rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: rgb(59, 130, 246);
+}
+
+.warning-alert {
+    background-color: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    color: rgb(245, 158, 11);
+        
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    transform: translate(4px, 4px);
+}

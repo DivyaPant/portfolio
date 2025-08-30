@@ -1,20 +1,22 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext} from 'react';
 import './Projects.css';
 import plusIcon from '../../assets/plusIcon.svg';
 import Modal from '../common/modal/Modal';
 import ProjectModal from './ProjectModal';
 import {modalConstants} from '../../constant';
 import { getProjects, postProjects, updateProjects, deleteProjects } from '../../api/RestServices';
-import { useContext } from 'react';
 import {UserContext} from '../../context/UserContext';
 import ProjectCard from './ProjectCard';
 import Loader from '../common/loader/Loader';
+import { AlertContext } from '../../context/UserContext';
+import { alertMsg } from './content';
 
 
 const Projects = (props)=> {
     const {ref} = props;
     const titleErrRef = useRef(null);
-    const isLoggedIn = useContext(UserContext)
+    const isLoggedIn = useContext(UserContext);
+    const setAlert = useContext(AlertContext)
     const [openModal, setOpenModal] = useState(false);
     const [modalDetails, setModalDetails] = useState({
         title: '',
@@ -30,6 +32,11 @@ const Projects = (props)=> {
                 const resp = await getProjects();
                 setProjects(resp);
             } catch (error) {
+                setAlert({
+                    title: 'Error fetching projects',
+                    message: 'Please refresh or try again later',
+                    type: 'error'
+                });
                 console.error('Error fetching projects:', error);
             }
             
@@ -64,7 +71,9 @@ const Projects = (props)=> {
             postProjects(editDetails).then(()=> {
                 fetchProjects();
                 handleModalClose();
+                setAlert(alertMsg?.add?.success);
             }).catch((error)=> {
+                setAlert(alertMsg?.add?.error);
                 console.error('Error adding project:', error);
             }).finally(() => {
                 setIsLoading(false);
@@ -74,7 +83,9 @@ const Projects = (props)=> {
             updateProjects(editDetails._id, editDetails).then(()=> {
                 fetchProjects();
                 handleModalClose();
+                setAlert(alertMsg?.update?.success);
             }).catch((error)=> {
+                setAlert(alertMsg?.update?.error);
                 console.error('Error updating project:', error);
             }).finally(() => {
                 setIsLoading(false);
@@ -84,7 +95,9 @@ const Projects = (props)=> {
             deleteProjects(editDetails._id).then(()=> {
                 fetchProjects();
                 handleModalClose();
+                setAlert(alertMsg?.remove?.success);
             }).catch((error)=> {
+                setAlert(alertMsg?.remove?.error);
                 console.error('Error removing project:', error);
             }).finally(() => {
                 setIsLoading(false);

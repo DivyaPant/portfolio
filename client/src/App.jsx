@@ -16,7 +16,7 @@ import { useEffect, useState, useRef } from 'react';
 import {handleLogin , handleLogout , handleRefreshing} from './firebase/helpers';
 
 function App() {
-const [isLoggedIn, setIsLoggedIn] = useState(false);
+const [isLoggedIn, setIsLoggedIn] = useState(null);
 const [alert, setAlert] = useState(alertInitialState);
 const sectionRefs = {
   home: useRef(null),

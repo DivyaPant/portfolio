@@ -19,19 +19,18 @@ useEffect(()=> {
   setOpenModal(false)
 },[isLoggedIn]);
 
+const loginAllowed = import.meta.env.VITE_LOCAL;
+
   return (
     <>
-    {
-      isLoggedIn ? <div className="admin-login-section"
-    onClick={handleLogout}
-    >
-      LogOut
-    </div> : 
+    {loginAllowed && (
     <div className="admin-login-section"
-    onClick={() => setOpenModal(true)}
-    >
-      Admin Login
-    </div> 
+    onClick={isLoggedIn ? handleLogout : () => setOpenModal(true)}
+    >{
+      isLoggedIn ? 'LogOut' : 'Admin Login'
+    }
+    </div>
+    )
     }
     
     {

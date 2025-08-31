@@ -43,8 +43,8 @@ const Projects = (props)=> {
         };
 
          useEffect(() => {
-        fetchProjects();
-    }, []); 
+     isLoggedIn !== null && fetchProjects();
+    }, [isLoggedIn]); 
    
     const handleModalClose = ()=> {
         setOpenModal(false);

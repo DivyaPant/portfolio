@@ -15,16 +15,21 @@ const handleLogout = async () => {
 
 const handleLogin = async (email, password) => {
         try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    const token = await userCredential.user.getIdToken(); // JWT from Firebase
-    if(token) {
-        localStorage.setItem("token", token);
-    }
+    await signInWithEmailAndPassword(auth, email, password);
   } catch (error) {
     console.error("Login failed:", error.message);
   }
 }
 
+const getToken = async () => {
+  try {
+    const token = await auth.currentUser.getIdToken(); 
+  return token;
+  } catch (error) {
+    return null;
+  }
+  
+}
  // async handling
 // const handleRefreshing = ()=> {
 //   return new Promise((resolve, reject)=> {
@@ -58,4 +63,4 @@ const unsubscribe = onAuthStateChanged(auth, (user) => {
   return unsubscribe;
 }
 
-export {handleLogin , handleLogout , handleRefreshing}
+export {handleLogin , handleLogout , handleRefreshing, getToken}

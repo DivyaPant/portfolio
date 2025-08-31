@@ -1,4 +1,5 @@
 import axios from "axios";
+import {getToken} from '../firebase/helpers';
 
 const apiClient = axios.create({
   baseURL: "http://localhost:5000/api",
@@ -8,7 +9,7 @@ const apiClient = axios.create({
 apiClient.interceptors.request.use(async config => {
     try { 
     // Do something before request is sent
-    const token = localStorage.getItem("token");
+    const token = await getToken();
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }

@@ -126,7 +126,7 @@ const Projects = (props)=> {
             <div className='projects-container'>
 {
     projects.map((project, index) => (
-        <ProjectCard project={project} index={index} handleProjectEdits={handleProjectEdits} key={project._id} />
+        <ProjectCard project={project} index={index} handleProjectEdits={handleProjectEdits} key={project.title} />
     ))
 }
                 
